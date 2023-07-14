@@ -10,26 +10,25 @@ public class Room {
         this.area = area;
         this.isAirConditioner = isAirConditioner;
         this.limitTemperature = limitTemperature;
-        if(temperature < limitTemperature)
+        if (temperature < limitTemperature) {
             this.temperature = limitTemperature;
-        else
+        } else {
             this.temperature = temperature;
+        }
     }
 
     public boolean decreaseTemperature() {
-        if(isAirConditioner) {
-            if(temperature - 1 >= limitTemperature) {
+        if (isAirConditioner) {
+            if (temperature - 1 >= limitTemperature) {
                 temperature--;
                 return true;
-            }
-            else if(temperature > limitTemperature) {
+            } else if (temperature > limitTemperature) {
                 temperature = limitTemperature;
                 return true;
-            }
-            else
+            } else {
                 return false;
+            }
         }
-
         return false;
     }
 
